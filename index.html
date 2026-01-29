@@ -1,30 +1,225 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Link2Me - Extractor de LinkedIn</title>
-  <link rel="stylesheet" href="popup.css">
-  <link rel="icon" href="assets/logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Link2Me · Extractor de LinkedIn</title>
+
+  <link rel="icon" href="assets/logo.png" />
+
+  <style>
+    :root {
+      --primary: #0a66c2;
+      --dark: #0f172a;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Ubuntu, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 3rem 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.9rem 1.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark);
+      border-color: var(--border);
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    /* INFO BOX */
+    .notice {
+      margin-top: 3rem;
+      padding: 1.2rem 1.4rem;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .notice strong {
+      color: var(--dark);
+    }
+
+    /* FEATURES */
+    .features {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+
+    .feature h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header style="text-align:center; margin-top:2rem;">
-    <img src="https://i.imgur.com/06lPDTy.jpeg" alt="Link2Me Logo" width="100">
-    <h1>Link2Me</h1>
-    <p>Extractor de datos de LinkedIn</p>
-  </header>
+  <div class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <img src="https://i.imgur.com/06lPDTy.jpeg" alt="Link2Me logo" width="90" />
+        <h1>Link2Me</h1>
+        <p>
+          Extraé información visible de perfiles de LinkedIn de forma manual,
+          clara y controlada. Copiá los datos al portapapeles en segundos.
+        </p>
 
-  <main style="text-align:center; margin:2rem;">
-    <img src="https://i.imgur.com/4Ihz3Vp.jpeg" alt="Banner promocional" style="max-width:100%; height:auto;">
-    <p>Extrae datos de perfiles de LinkedIn de forma rápida y copia la información fácilmente.</p>
-    <a href="https://chrome.google.com/webstore/detail/link2me/ID_DE_TU_EXTENSIÓN" target="_blank" 
-       style="display:inline-block; margin-top:1rem; padding:1rem 2rem; background-color:#0073b1; color:white; border-radius:5px; text-decoration:none;">
-       Instalar en Chrome
-    </a>
-  </main>
+        <div class="hero-actions">
+          <a class="btn btn-secondary" href="#" onclick="alert('Disponible próximamente en Chrome Web Store')">
+            Chrome Web Store
+          </a>
+          <a class="btn btn-primary" href="https://github.com/humen-io/link2me/releases/download/v1.0.0/link2me-v1.0.0.zip" target="_blank">
+            Descargar extensión
+          </a>
+        </div>
+      </div>
 
-  <footer style="text-align:center; margin:2rem 0;">
-    <small>© 2026 Link2Me. Todos los derechos reservados.</small>
-  </footer>
+      <img
+        src="https://i.imgur.com/4Ihz3Vp.jpeg"
+        alt="Vista previa de Link2Me"
+      />
+    </section>
+
+    <!-- NOTICE -->
+    <div class="notice">
+      <strong>Estado actual:</strong>  
+      Link2Me se encuentra en proceso de revisión por parte de Google.
+      <br />
+      Hasta su aprobación en Chrome Web Store, la extensión puede descargarse
+      y utilizarse <strong>de forma local</strong> activando el modo desarrollador
+      en Chrome.
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="feature">
+        <h3>Extracción manual</h3>
+        <p>La acción solo ocurre cuando el usuario hace clic. Sin procesos automáticos.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Datos visibles</h3>
+        <p>Solo se leen datos públicos que ya están visibles en el perfil.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Privacidad primero</h3>
+        <p>No se envía ni almacena información en servidores externos.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Configuración flexible</h3>
+        <p>Seleccioná columnas, ordenalas y copiá con o sin encabezados.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2026 Link2Me · Extensión independiente · No afiliada a LinkedIn
+    </footer>
+  </div>
 </body>
 </html>
